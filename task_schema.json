@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task",
+  "description": "Schema for task documents in Firestore",
+  "type": "object",
+  "properties": {
+    "completed": {
+      "description": "Status of the task completion",
+      "type": "boolean"
+    },
+    "created": {
+      "description": "The time when the task was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "details": {
+      "description": "The details of the task",
+      "type": "string"
+    },
+    "title": {
+      "description": "The title of the task",
+      "type": "string"
+    },
+    "user": {
+      "description": "Reference to the user who created the task",
+      "type": "string"
+    }
+  },
+  "required": ["completed", "created", "title", "user"],
+  "tasks": [
+    {
+      "completed": false,
+      "created": "2025-02-07T14:25:27-05:00",
+      "details": "",
+      "title": "Get eggs and bread",
+      "user": "/users/wWsgVbDUMjc6DjUmVfm0uuxOecg2"
+    },
+    {
+      "completed": false,
+      "created": "2025-02-07T14:24:16-05:00",
+      "details": "",
+      "title": "Studying for CSC305 Reflection for Week 3",
+      "user": "/users/wWsgVbDUMjc6DjUmVfm0uuxOecg2"
+    },
+    {
+      "completed": false,
+      "created": "2025-02-07T14:25:03-05:00",
+      "details": "",
+      "title": "Plan lessons for work",
+      "user": "/users/wWsgVbDUMjc6DjUmVfm0uuxOecg2"
+    },
+    {
+      "completed": false,
+      "created": "2025-02-07T14:24:01-05:00",
+      "details": "",
+      "title": "Turning in CSC305 Assignment 3",
+      "user": "/users/wWsgVbDUMjc6DjUmVfm0uuxOecg2"
+    }
+  ]
+}

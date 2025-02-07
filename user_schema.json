@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "users": {
+      "type": "object",
+      "patternProperties": {
+        "^users/.*$": {
+          "type": "object",
+          "properties": {
+            "birthdate": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp for the user's birthdate",
+              "example": "2025-02-03T00:00:00-05:00"
+            },
+            "created_time": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp for when the user was created",
+              "example": "2025-02-07T13:45:09-05:00"
+            },
+            "display_name": {
+              "type": "string",
+              "description": "The display name of the user",
+              "example": "mike"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "The user's email address",
+              "example": "mrdey@outlook.com"
+            },
+            "favoritecolor": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$",
+              "description": "The user's favorite color in hex format",
+              "example": "#7a4747"
+            },
+            "photo_url": {
+              "type": "string",
+              "format": "uri",
+              "description": "The URL to the user's photo",
+              "example": "https://firebasestorage.googleapis.com/v0/b/to-do-app-jfbuha.firebasestorage.app/o/users%2F8qXJgAVaLUePr0GmDURVagCepc23%2Fuploads%2F1738953916948000.png?alt=media&token=6c577695-f678-48d2-9997-7070323e1c59"
+            },
+            "uid": {
+              "type": "string",
+              "description": "Unique user identifier",
+              "example": "8qXJgAVaLUePr0GmDURVagCepc23"
+            }
+          },
+          "required": ["birthdate", "created_time", "display_name", "email", "photo_url", "uid"],
+          "additionalProperties": false
+        },
+        "^users/wWsgVbDUMjc6DjUmVfm0uuxOecg2$": {
+          "type": "object",
+          "properties": {
+            "birthdate": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp for the user's birthdate",
+              "example": "2025-02-04T00:00:00-05:00"
+            },
+            "created_time": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp for when the user was created",
+              "example": "2025-02-07T13:58:23-05:00"
+            },
+            "display_name": {
+              "type": "string",
+              "description": "The display name of the user",
+              "example": "mike"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "The user's email address",
+              "example": "michael.dey@uri.edu"
+            },
+            "favoritecolor": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$",
+              "description": "The user's favorite color in hex format",
+              "example": "#fff"
+            },
+            "photo_url": {
+              "type": "string",
+              "format": "uri",
+              "description": "The URL to the user's photo",
+              "example": "https://firebasestorage.googleapis.com/v0/b/to-do-app-jfbuha.firebasestorage.app/o/users%2FwWsgVbDUMjc6DjUmVfm0uuxOecg2%2Fuploads%2F1738954710660000.png?alt=media&token=060c5cd6-5cb8-4983-a574-95c8a59b1ea8"
+            },
+            "uid": {
+              "type": "string",
+              "description": "Unique user identifier",
+              "example": "wWsgVbDUMjc6DjUmVfm0uuxOecg2"
+            }
+          },
+          "required": ["birthdate", "created_time", "display_name", "email", "photo_url", "uid"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "tasks": {
+      "type": "object",
+      "patternProperties": {
+        "^tasks/.*$": {
+          "type": "object",
+          "properties": {
+            "completed": {
+              "type": "boolean",
+              "description": "Indicates whether the task is completed",
+              "example": true
+            },
+            "created": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp for when the task was created",
+              "example": "2024-06-19T10:05:53-04:00"
+            },
+            "details": {
+              "type": "string",
+              "description": "Detailed description of the task",
+              "example": "We are testing add task, but still have more to go."
+            },
+            "title": {
+              "type": "string",
+              "description": "The title of the task",
+              "example": "Finish This App"
+            },
+            "user": {
+              "type": "string",
+              "pattern": "^/users/.*$",
+              "description": "Reference to the user document associated with the task",
+              "example": "/users/DJEwXBO3dxfbPVHpfl6ZmqWpkJxx"
+            }
+          },
+          "required": ["completed", "created", "details", "title", "user"],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "required": ["users", "tasks"],
+  "additionalProperties": false
+}
